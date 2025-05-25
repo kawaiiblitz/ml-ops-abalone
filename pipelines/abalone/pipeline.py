@@ -1,11 +1,9 @@
 from sagemaker.workflow.pipeline import Pipeline
-from sagemaker.workflow.parameters import ParameterString
 
-def get_pipeline():
+def get_pipeline(region=None, role=None, default_bucket=None, pipeline_name="DemoPipeline", base_job_prefix="demo"):
     return Pipeline(
-        name="abalone-pipeline",
-        parameters=[
-            ParameterString(name="InputDataUrl", default_value="s3://dummy-url/")
-        ],
-        steps=[]
+        name=pipeline_name,
+        parameters=[],
+        steps=[],
+        sagemaker_session=None
     )
